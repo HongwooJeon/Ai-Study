@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug AIAgentWeek1 (dotnet)",
+      "type": "dotnet",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}/AIAgentWeek1/CSharpAIAgentLab.csproj"
+    },
+    {
+      "name": "Debug AIAgentWeek1 (coreclr)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build AIAgentWeek1",
+      "program": "${workspaceFolder}/AIAgentWeek1/bin/Debug/net10.0/CSharpAIAgentLab.dll",
+      "cwd": "${workspaceFolder}/AIAgentWeek1",
+      "console": "integratedTerminal",
+      "stopAtEntry": false
+    }
+  ]
+}
