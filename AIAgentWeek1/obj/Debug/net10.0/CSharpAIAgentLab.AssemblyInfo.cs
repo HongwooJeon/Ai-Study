@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSharpAIAgentLab")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2f682880323ee90943bb52c056205e7279457cd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ae6dad92e99b26460a77d73579021661d7807e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSharpAIAgentLab")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSharpAIAgentLab")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
