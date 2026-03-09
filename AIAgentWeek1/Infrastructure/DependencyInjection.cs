@@ -15,6 +15,7 @@ public static class DependencyInjection
         services.AddTransient<ILlmService>(sp => sp.GetRequiredService<OpenAiLlmService>());
         services.AddTransient<ILlmService>(sp => sp.GetRequiredService<OllamaLlmService>());
         services.AddTransient<ILlmServiceResolver, LlmServiceResolver>();
+        services.AddTransient<RagDemoRunner>();
 
         return services;
     }

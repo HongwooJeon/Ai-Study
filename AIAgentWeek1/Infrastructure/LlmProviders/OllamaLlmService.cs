@@ -11,9 +11,15 @@ public sealed class OllamaLlmService(HttpClient httpClient) : ILlmService
 
     public async Task<LlmResult> GenerateAsync(string prompt, CancellationToken cancellationToken = default)
     {
+        var modelName = Environment.GetEnvironmentVariable("OLLAMA_MODEL")?.Trim();
+        if (string.IsNullOrWhiteSpace(modelName))
+        {
+            modelName = "qwen2.5:3b";
+        }
+
         var requestBody = new
         {
-            model = "qwen2.5:1.5b",
+            model = modelName,
             prompt,
             stream = false
         };
@@ -28,7 +34,7 @@ public sealed class OllamaLlmService(HttpClient httpClient) : ILlmService
         }
         catch (HttpRequestException ex)
         {
-            return new LlmResult(false, "로컬 서버 연결에 실패했습니다. Ollama 앱 실행 후 `ollama run qwen2.5:1.5b`를 먼저 시도해보세요.\n" + ex.Message);
+            return new LlmResult(false, $"로컬 서버 연결에 실패했습니다. Ollama 앱 실행 후 `ollama run {modelName}`를 먼저 시도해보세요.\n" + ex.Message);
         }
 
         var responseText = await response.Content.ReadAsStringAsync(cancellationToken);
